@@ -1,0 +1,15 @@
+{
+	"name": "wt_praticaEng",
+	"properties": {
+		"annotations": [],
+		"type": "Web",
+		"typeProperties": {
+			"url": "http://books.toscrape.com/",
+			"authenticationType": "Anonymous"
+		},
+		"connectVia": {
+			"referenceName": "ir-praticaEng",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
