@@ -11,7 +11,7 @@ Essa pratica foi adaptado de: https://medium.com/@meigarom/o-projeto-de-data-eng
 
 - Azure Data lake storage
 - Azure data factory
-- Data bricks
+- Azure Databricks
 - Azure Key vault
 
 ```bash
