@@ -75,6 +75,75 @@
 					"referenceName": "ls_databricks",
 					"type": "LinkedServiceReference"
 				}
+			},
+			{
+				"name": "Falha bronze",
+				"type": "Fail",
+				"dependsOn": [
+					{
+						"activity": "Bronze",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"message": {
+						"value": "@activity('Bronze').output",
+						"type": "Expression"
+					},
+					"errorCode": {
+						"value": "@activity('Bronze').output",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Falha gold",
+				"type": "Fail",
+				"dependsOn": [
+					{
+						"activity": "Gold",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"message": {
+						"value": "@activity('Gold').output",
+						"type": "Expression"
+					},
+					"errorCode": {
+						"value": "@activity('Gold').output",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Falha silver",
+				"type": "Fail",
+				"dependsOn": [
+					{
+						"activity": "Silver",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"message": {
+						"value": "@activity('Silver').output",
+						"type": "Expression"
+					},
+					"errorCode": {
+						"value": "@activity('Silver').output",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"annotations": []

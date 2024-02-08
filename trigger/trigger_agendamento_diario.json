@@ -1,0 +1,24 @@
+{
+	"name": "trigger_agendamento_diario",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pipeline_praticaEng",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 2,
+				"startTime": "2024-02-08T00:00:00",
+				"timeZone": "E. South America Standard Time"
+			}
+		}
+	}
+}
